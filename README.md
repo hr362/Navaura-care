@@ -7,6 +7,7 @@ Source for [navauracare.com.au](https://www.navauracare.com.au) — a static HTM
 - Photos: `assets/img/`
 - Old-address redirects: `complex-care.html`, `mental-health.html`
 - Custom domain: `CNAME`
+- WhatsApp chat widget: `assets/whatsapp.js`, `assets/whatsapp.css` (see `WHATSAPP-SETUP.md`)
 - SEO: `sitemap.xml`, `robots.txt`
 
 ## Hosting (GitHub Pages)
