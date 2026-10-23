@@ -5,13 +5,16 @@ Source for [navauracare.com.au](https://www.navauracare.com.au) — a static HTM
 - Pages: `*.html` in the repo root
 - Styles, logo and icons: `assets/`
 - Photos: `assets/img/`
-- Redirects (Netlify): `_redirects`
+- Old-address redirects: `complex-care.html`, `mental-health.html`
+- Custom domain: `CNAME`
 - SEO: `sitemap.xml`, `robots.txt`
 
-## Deploying from GitHub (Netlify)
+## Hosting (GitHub Pages)
 
-1. In Netlify choose **Add new site → Import an existing project → GitHub** and pick this repository.
-2. Leave **Build command** empty and set **Publish directory** to `/` (the repo root).
-3. Every push to the production branch then redeploys the site automatically.
+The site is served by GitHub Pages straight from this repository at https://www.navauracare.com.au. Every push to the published branch goes live within a minute or two.
 
-Forms (contact, referral, job applications) use Netlify Forms — see `HOW-TO-PUBLISH.md` for form notifications, the custom domain and Google setup.
+- **Settings → Pages**: Source *Deploy from a branch*, branch = the default branch, folder `/ (root)`; Custom domain `www.navauracare.com.au`; *Enforce HTTPS* on.
+- **DNS** (at the domain registrar; leave MX/email records alone):
+  - `www` CNAME → `hr362.github.io`
+  - `@` A records → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+- **Forms** (contact, referral, job application) post to [FormSubmit](https://formsubmit.co), which emails each submission to services@navauracare.com.au. The very first submission triggers an activation email to that inbox; click *Activate Form* once.

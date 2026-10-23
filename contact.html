@@ -63,8 +63,13 @@
   </div>
   <div>
     <h2 style="font-size:1.6rem">Send us a message</h2>
-    <form class="form" name="contact" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="company_website">
-      <p class="hp"><label>Leave this empty: <input name="company_website"></label></p>
+    <form class="form" name="contact" method="POST" action="https://formsubmit.co/services@navauracare.com.au">
+      <input type="hidden" name="_next" value="https://www.navauracare.com.au/thank-you.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="form" value="contact">
+      <input type="hidden" name="_subject" value="New message from the NavAura Care website">
+      <p class="hp"><label>Leave this empty: <input name="_honey" tabindex="-1" autocomplete="off"></label></p>
       <div class="field"><label for="c_name">Name <span class="req">*</span></label><input type="text" id="c_name" name="name" autocomplete="name" required></div>
       <div class="row">
         <div class="field"><label for="c_phone">Phone <span class="req">*</span></label><input type="tel" id="c_phone" name="phone" autocomplete="tel" required></div>
