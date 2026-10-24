@@ -65,7 +65,7 @@
     <fieldset>
       <legend id="you-label">Your details</legend>
       <div class="row">
-        <div class="field"><label for="your_name">Full name <span class="req">*</span></label><input type="text" id="your_name" name="your_name" autocomplete="name" required></div>
+        <div class="field"><label for="your_name">Full name <span class="req pro-only">*</span></label><input type="text" id="your_name" name="your_name" autocomplete="name"></div>
         <div class="field"><label for="your_phone">Phone <span class="req family-only">*</span></label><input type="tel" id="your_phone" name="your_phone" autocomplete="tel" required></div>
       </div>
       <div class="field"><label for="your_email">Email <span class="req pro-only">*</span></label><input type="email" id="your_email" name="your_email" autocomplete="email"></div>
@@ -112,7 +112,7 @@
       <p class="hint" style="margin:0">Please email any reports or plans to <a href="mailto:services@navauracare.com.au">services@navauracare.com.au</a> rather than attaching them here.</p>
     </fieldset>
 
-    <label class="checks" style="display:flex"><label><input type="checkbox" name="consent" value="Yes" required> The participant (or their guardian) has agreed to this referral <span class="req">*</span></label></label>
+    <label class="checks pro-only" style="display:flex" hidden><label><input type="checkbox" name="consent" value="Yes" data-req> The participant (or their guardian) has agreed to this referral <span class="req">*</span></label></label>
     <p><button class="btn btn-purple" type="submit">Send referral</button></p>
     <p class="hint" style="color:var(--muted);font-size:.95rem">Your information goes straight to our intake team at services@navauracare.com.au and is handled under our <a href="privacy.html">Privacy Policy</a>.</p>
   </form>
@@ -208,6 +208,7 @@
     document.querySelectorAll('.req.pro-only').forEach(el => el.hidden = !isPro);
     email.required = isPro;
     document.getElementById('your_phone').required = !isPro;
+    document.getElementById('your_name').required = isPro;
     document.getElementById('you-label').textContent = isPro ? 'Your details (referrer)' : 'Your details';
   }
   radios.forEach(r => r.addEventListener('change', sync));
