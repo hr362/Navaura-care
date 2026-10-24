@@ -66,11 +66,11 @@
       <legend id="you-label">Your details</legend>
       <div class="row">
         <div class="field"><label for="your_name">Full name <span class="req">*</span></label><input type="text" id="your_name" name="your_name" autocomplete="name" required></div>
-        <div class="field"><label for="your_phone">Phone <span class="req">*</span></label><input type="tel" id="your_phone" name="your_phone" autocomplete="tel" required></div>
+        <div class="field"><label for="your_phone">Phone <span class="req family-only">*</span></label><input type="tel" id="your_phone" name="your_phone" autocomplete="tel" required></div>
       </div>
       <div class="field"><label for="your_email">Email <span class="req pro-only">*</span></label><input type="email" id="your_email" name="your_email" autocomplete="email"></div>
       <div class="row pro-only" hidden>
-        <div class="field"><label for="organisation">Organisation <span class="req">*</span></label><input type="text" id="organisation" name="organisation" data-req></div>
+        <div class="field"><label for="organisation">Organisation</label><input type="text" id="organisation" name="organisation" autocomplete="organization"></div>
         <div class="field"><label for="role">Your role</label>
           <select id="role" name="role"><option>Support Coordinator</option><option>Specialist Support Coordinator</option><option>Plan Manager</option><option>Hospital / health professional</option><option>Other</option></select></div>
       </div>
@@ -207,6 +207,7 @@
     show(document.querySelectorAll('.family-only'), !isPro);
     document.querySelectorAll('.req.pro-only').forEach(el => el.hidden = !isPro);
     email.required = isPro;
+    document.getElementById('your_phone').required = !isPro;
     document.getElementById('you-label').textContent = isPro ? 'Your details (referrer)' : 'Your details';
   }
   radios.forEach(r => r.addEventListener('change', sync));
