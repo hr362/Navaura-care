@@ -68,8 +68,8 @@
         <div class="field"><label for="your_name">Full name <span class="req">*</span></label><input type="text" id="your_name" name="your_name" autocomplete="name" required></div>
         <div class="field"><label for="your_phone">Phone <span class="req">*</span></label><input type="tel" id="your_phone" name="your_phone" autocomplete="tel" required></div>
       </div>
-      <div class="field"><label for="your_email">Email <span class="req">*</span></label><input type="email" id="your_email" name="your_email" autocomplete="email" required></div>
-      <div id="pro-fields" class="row" hidden>
+      <div class="field"><label for="your_email">Email <span class="req pro-only">*</span></label><input type="email" id="your_email" name="your_email" autocomplete="email"></div>
+      <div class="row pro-only" hidden>
         <div class="field"><label for="organisation">Organisation <span class="req">*</span></label><input type="text" id="organisation" name="organisation" data-req></div>
         <div class="field"><label for="role">Your role</label>
           <select id="role" name="role"><option>Support Coordinator</option><option>Specialist Support Coordinator</option><option>Plan Manager</option><option>Hospital / health professional</option><option>Other</option></select></div>
@@ -78,15 +78,16 @@
 
     <fieldset>
       <legend>About the person needing support</legend>
+      <div class="field family-only"><div class="checks"><label><input type="checkbox" id="ndis_participant" name="current_ndis_participant" value="Yes"> I am a current NDIS participant</label></div></div>
       <div class="row">
         <div class="field"><label for="participant_name">Participant's name <span class="req">*</span></label><input type="text" id="participant_name" name="participant_name" required></div>
         <div class="field"><label for="participant_suburb">Suburb <span class="req">*</span></label><input type="text" id="participant_suburb" name="participant_suburb" required></div>
       </div>
       <div class="row">
-        <div class="field"><label for="participant_age">Age</label><input type="text" id="participant_age" name="participant_age" inputmode="numeric"></div>
+        <div class="field pro-only" hidden><label for="participant_age">Age</label><input type="text" id="participant_age" name="participant_age" inputmode="numeric"></div>
         <div class="field"><label for="language">Preferred language</label><input type="text" id="language" name="language" placeholder="e.g. English, Hindi, Arabic"></div>
       </div>
-      <div class="row">
+      <div class="row pro-only" hidden>
         <div class="field"><label for="ndis_number">NDIS number</label><input type="text" id="ndis_number" name="ndis_number" inputmode="numeric"><span class="hint">If you have it handy</span></div>
         <div class="field"><label for="plan_management">How is the plan managed?</label>
           <select id="plan_management" name="plan_management"><option>Not sure</option><option>NDIA-managed</option><option>Plan-managed</option><option>Self-managed</option><option>No NDIS plan yet</option></select></div>
@@ -95,18 +96,17 @@
 
     <fieldset>
       <legend>What support is needed?</legend>
-      <div class="checks"><label><input type="checkbox" name="supports[]" value="Daily personal activities"> Daily personal activities</label><label><input type="checkbox" name="supports[]" value="High intensity support"> High intensity support</label><label><input type="checkbox" name="supports[]" value="2:1 support"> 2:1 support</label><label><input type="checkbox" name="supports[]" value="Psychosocial disability support"> Psychosocial disability support</label><label><input type="checkbox" name="supports[]" value="SIL"> SIL</label><label><input type="checkbox" name="supports[]" value="SDA"> SDA</label><label><input type="checkbox" name="supports[]" value="Community participation"> Community participation</label><label><input type="checkbox" name="supports[]" value="Group activities"> Group activities</label><label><input type="checkbox" name="supports[]" value="Life skills"> Life skills</label><label><input type="checkbox" name="supports[]" value="Employment or study support"> Employment or study support</label><label><input type="checkbox" name="supports[]" value="Accessible transport"> Accessible transport</label><label><input type="checkbox" name="supports[]" value="Support for children"> Support for children</label><label><input type="checkbox" name="supports[]" value="Overnight support"> Overnight support</label><label><input type="checkbox" name="supports[]" value="Household tasks"> Household tasks</label><label><input type="checkbox" name="supports[]" value="Support coordination"> Support coordination (Level 1 or 2)</label><label><input type="checkbox" name="supports[]" value="Allied health referral"> Allied health referral (we'll suggest providers)</label><label><input type="checkbox" name="supports[]" value="Not sure yet"> Not sure yet</label></div>
+      <details class="dropdown" id="supports-dd">
+        <summary><span>Choose supports</span> <span class="dd-count" id="supports-count">None selected</span></summary>
+        <div class="checks"><label><input type="checkbox" name="supports[]" value="Personal care and showering"> Personal care and showering</label><label><input type="checkbox" name="supports[]" value="High intensity support"> High intensity support</label><label><input type="checkbox" name="supports[]" value="2:1 support"> 2:1 support</label><label><input type="checkbox" name="supports[]" value="Supported Independent Living (SIL)"> Supported Independent Living (SIL)</label><label><input type="checkbox" name="supports[]" value="Psychosocial support"> Psychosocial support</label><label><input type="checkbox" name="supports[]" value="SDA and accommodation"> SDA and accommodation</label><label><input type="checkbox" name="supports[]" value="Community participation"> Community participation</label><label><input type="checkbox" name="supports[]" value="Group activities"> Group activities</label><label><input type="checkbox" name="supports[]" value="Life skills"> Life skills</label><label><input type="checkbox" name="supports[]" value="Employment or study support"> Employment or study support</label><label><input type="checkbox" name="supports[]" value="Early childhood supports"> Early childhood supports</label><label><input type="checkbox" name="supports[]" value="Accessible transport"> Accessible transport</label><label><input type="checkbox" name="supports[]" value="Overnight support"> Overnight support</label><label><input type="checkbox" name="supports[]" value="Household tasks"> Household tasks</label><label><input type="checkbox" name="supports[]" value="Support coordination (Level 1 or 2)"> Support coordination (Level 1 or 2)</label><label><input type="checkbox" name="supports[]" value="Allied health referral (we&#39;ll suggest providers)"> Allied health referral (we'll suggest providers)</label><label><input type="checkbox" name="supports[]" value="Not sure yet"> Not sure yet</label></div>
+      </details>
       <div class="field"><label for="details">Tell us a little more</label><textarea id="details" name="details" placeholder="Days and times, goals, worker preferences (e.g. gender), anything we should know"></textarea></div>
       <div class="field"><label for="start">When would you like to start?</label>
         <select id="start" name="start"><option>As soon as possible</option><option>Within 2 weeks</option><option>Within a month</option><option>Just exploring</option></select></div>
     </fieldset>
 
-    <fieldset>
-      <legend>Plan and risk details (optional)</legend>
-      <div class="row">
-        <div class="field"><label for="plan_start">Plan start date</label><input type="date" id="plan_start" name="plan_start"></div>
-        <div class="field"><label for="plan_end">Plan end date</label><input type="date" id="plan_end" name="plan_end"></div>
-      </div>
+    <fieldset class="pro-only" hidden>
+      <legend>Funding and risk details (optional)</legend>
       <div class="field"><span class="group-label">Funding available</span><div class="checks"><label><input type="checkbox" name="funding[]" value="Core supports"> Core supports</label><label><input type="checkbox" name="funding[]" value="Capacity building"> Capacity building</label><label><input type="checkbox" name="funding[]" value="SIL"> SIL</label><label><input type="checkbox" name="funding[]" value="SDA"> SDA</label><label><input type="checkbox" name="funding[]" value="Not sure"> Not sure</label></div></div>
       <div class="field"><label for="risks">Known risks, behaviour support plan, or health needs</label><textarea id="risks" name="risks"></textarea></div>
       <p class="hint" style="margin:0">Please email any reports or plans to <a href="mailto:services@navauracare.com.au">services@navauracare.com.au</a> rather than attaching them here.</p>
@@ -192,17 +192,35 @@
 </script>
 <script>
 (function () {
-  const pro = document.getElementById('pro-fields');
   const radios = document.querySelectorAll('input[name="referrer_type"]');
+  const email = document.getElementById('your_email');
+  // Hidden sections are disabled so their fields are neither required nor sent.
+  function show(els, on) {
+    els.forEach(el => {
+      el.hidden = !on;
+      el.querySelectorAll('input, select, textarea').forEach(f => { f.disabled = !on; if (f.hasAttribute('data-req')) f.required = on; });
+    });
+  }
   function sync() {
     const isPro = document.getElementById('rt-pro').checked;
-    pro.hidden = !isPro;
-    pro.querySelectorAll('[data-req]').forEach(el => el.required = isPro);
+    show(document.querySelectorAll('.pro-only:not(.req)'), isPro);
+    show(document.querySelectorAll('.family-only'), !isPro);
+    document.querySelectorAll('.req.pro-only').forEach(el => el.hidden = !isPro);
+    email.required = isPro;
     document.getElementById('you-label').textContent = isPro ? 'Your details (referrer)' : 'Your details';
   }
   radios.forEach(r => r.addEventListener('change', sync));
   if (new URLSearchParams(location.search).get('type') === 'professional') document.getElementById('rt-pro').checked = true;
   sync();
+
+  const dd = document.getElementById('supports-dd');
+  const count = document.getElementById('supports-count');
+  function updateCount() {
+    const picked = [...dd.querySelectorAll('input:checked')].map(i => i.value);
+    count.textContent = picked.length === 0 ? 'None selected' : picked.length <= 2 ? picked.join(', ') : picked.length + ' selected';
+  }
+  dd.addEventListener('change', updateCount);
+  updateCount();
 })();
 </script>
 <script src="/assets/whatsapp.js" defer></script>

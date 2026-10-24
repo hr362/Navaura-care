@@ -371,3 +371,12 @@ a.svc-wide img { height: 100%; aspect-ratio: auto; }
 .site-footer .legal p { margin: 0; }
 @media (max-width: 1100px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } .footer-cols { columns: 1; } }
+
+/* ---------- v9: referral form dropdown ---------- */
+details.dropdown { border: 2px solid var(--line); border-radius: 14px; background: #fff; margin-bottom: 18px; }
+details.dropdown summary { padding: 12px 16px; font-family: var(--body); font-size: 1.05rem; flex-wrap: wrap; align-items: center; }
+details.dropdown summary::after { content: "▾"; font-size: 1.1rem; margin-left: auto; }
+details.dropdown[open] summary::after { content: "▴"; }
+details.dropdown[open] summary { border-bottom: 1px solid var(--line); }
+details.dropdown .dd-count { font-weight: 400; color: var(--muted); font-size: .95rem; }
+details.dropdown .checks { padding: 12px 16px 16px; }
