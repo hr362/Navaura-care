@@ -417,3 +417,11 @@ html, body { overflow-x: clip; }
   .brand img { height: 52px; }
   .header-actions .btn { padding: 8px 14px; font-size: .95rem; }
 }
+/* "Our promise" and other profile sections: compact on phones */
+@media (max-width: 760px) {
+  .profile { gap: 20px; }
+  .profile .photo img { aspect-ratio: 16 / 10; height: auto; max-height: 220px; object-fit: cover; object-position: center 35%; }
+  .profile .quote { font-size: 1.25rem; line-height: 1.4; margin: 8px 0 12px; }
+  .profile h2 { margin-bottom: 4px; }
+}
+@media (min-width: 761px) { .profile .photo img { aspect-ratio: 4 / 5; object-fit: cover; } }

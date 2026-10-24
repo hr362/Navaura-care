@@ -38,7 +38,7 @@
 
   var css = document.createElement('link');
   css.rel = 'stylesheet';
-  css.href = '/assets/whatsapp.css';
+  css.href = '/assets/whatsapp.css?v=20261024b';
   document.head.appendChild(css);
 
   function waLink(text) {
