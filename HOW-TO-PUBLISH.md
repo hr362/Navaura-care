@@ -23,6 +23,5 @@ The website lives in this GitHub repository and is hosted free by **GitHub Pages
 
 ## Still to do
 
-- **Director's photo (optional).** In team.html, find "To add the Director's photo" and follow the note. Put the photo in assets/img as director.jpg.
 - **TikTok.** Send Claude your TikTok link and it'll be added next to Facebook, Instagram and LinkedIn.
 - **Google Business Profile.** Create a profile at business.google.com for NavAura Care as a service-area business in Liverpool NSW.
