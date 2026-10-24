@@ -2,6 +2,8 @@
 
 The website has a WhatsApp chat button on every page (`assets/whatsapp.js` and `assets/whatsapp.css`). Visitors pick an option or type a message, and WhatsApp opens with the message ready to send to **+61 431 404 000**. To change the number, options or wording, edit the `NUMBER` and `OPTIONS` at the top of `assets/whatsapp.js`.
 
+The same widget shows a **Call** button (0431 404 000) and a **Facebook Messenger** button. Messenger links go to `MESSENGER_URL` at the top of `assets/whatsapp.js`; set it to `https://m.me/<your Facebook page username>` so the button opens a Messenger chat directly.
+
 For automatic replies inside WhatsApp, use the free **WhatsApp Business** app on the phone that has this number. Open WhatsApp Business, go to **Settings → Business tools**, and set up the following.
 
 ## 1. Business profile
