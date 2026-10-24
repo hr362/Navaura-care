@@ -332,7 +332,7 @@ a.svc-img h3 { font-size: 1.2rem; }
 .note-box { background: var(--lilac-soft); border-left: 4px solid var(--lilac); border-radius: 8px; padding: 14px 16px; font-size: 1rem; }
 .hero-ndis { width: 200px; height: auto; margin-bottom: 14px; background: #fff; border-radius: 12px; padding: 6px; }
 .profile .photo img { width: 100%; }
-.profile { grid-template-columns: minmax(200px, 320px) 1fr; }
+@media (min-width: 761px) { .profile { grid-template-columns: minmax(200px, 320px) 1fr; } }
 @media (min-width: 1100px) { .cards { grid-template-columns: repeat(5, 1fr); } .cards .svc-img h3 { font-size: 1.1rem; } .cards .svc-img p { font-size: .95rem; } }
 @media (min-width: 1241px) and (max-width: 1380px) { .menu-btn { display: none; } .nav { display: flex; position: static; flex-direction: row; padding: 0; border: 0; box-shadow: none; background: none; } .nav a { padding: 9px 8px; font-size: .95rem; } .brand img { height: 56px; } }
 
@@ -396,3 +396,24 @@ a.link-card em { margin-top: auto; padding-top: 6px; font-style: normal; font-si
 .social-lg .social-instagram svg { color: #C13584; }
 .social-lg .social-linkedin svg { color: #0A66C2; }
 .social-lg .social-whatsapp svg { color: #25D366; }
+
+/* ---------- v11: small screens and tablets ---------- */
+html, body { overflow-x: clip; }
+.btn { max-width: 100%; white-space: normal; text-align: center; overflow-wrap: anywhere; }
+/* Stacked photos stay a sensible height on phones and tablets */
+@media (max-width: 820px) {
+  .media-split > .photo img, .split .photo img, .profile .photo img { width: 100%; max-height: 380px; object-fit: cover; }
+}
+/* Tablets in portrait: keep the home hero side by side */
+@media (min-width: 700px) and (max-width: 820px) {
+  .hero .wrap, .hero .wrap:has(.hero-photo-lg) { grid-template-columns: 1.1fr .9fr; gap: 28px; }
+  .hero-photo, .hero-photo.hero-photo-lg { order: 0; max-width: 100%; }
+}
+/* iPad landscape and small laptops: show the full menu */
+@media (min-width: 1000px) and (max-width: 1240px) {
+  .menu-btn { display: none; }
+  .nav { display: flex; position: static; flex-direction: row; padding: 0; border: 0; box-shadow: none; background: none; }
+  .nav a { padding: 8px 6px; font-size: .9rem; }
+  .brand img { height: 52px; }
+  .header-actions .btn { padding: 8px 14px; font-size: .95rem; }
+}

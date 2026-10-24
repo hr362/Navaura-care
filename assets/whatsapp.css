@@ -73,3 +73,5 @@ a.wa-cta:hover { background: #1EBE5A; color: #fff; }
   .wa-actions { width: 56px; gap: 8px; }
   .wa-mini { width: 44px; height: 44px; font-size: 22px; }
 }
+/* Phones already have "Call us" in the bottom bar */
+@media (max-width: 760px) { .wa-call { display: none; } }
