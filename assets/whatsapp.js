@@ -13,7 +13,7 @@
       reply: 'Thanks for thinking of us. We reply to every referral within 24 hours. You can fill in our <a href="/referral.html">referral form</a> (3 minutes), or message us on WhatsApp now.',
       message: 'Hi NavAura Care, I would like to make a referral for NDIS support.' },
     { label: 'Ask about services',
-      reply: 'We offer personal care, high intensity support, SIL, community participation, life skills, psychosocial support, children’s support, accessible transport and support coordination across Western and South West Sydney. See <a href="/services.html">all services</a>.',
+      reply: 'We offer personal care and daily living (including high intensity support, life skills, and work and study), SIL, SDA and accommodation, community participation, early childhood supports, accessible transport, support coordination (Level 1 and 2) and psychosocial support across Western and South West Sydney. We don’t provide allied health, but we can refer you. See <a href="/services.html">all services</a>.',
       message: 'Hi NavAura Care, I would like to know more about your NDIS services.' },
     { label: 'Check availability',
       reply: 'Tell us the suburb, the days and times you need and the type of support, and we’ll let you know who’s available, including worker gender and language preferences.',
