@@ -425,3 +425,7 @@ html, body { overflow-x: clip; }
   .profile h2 { margin-bottom: 4px; }
 }
 @media (min-width: 761px) { .profile .photo img { aspect-ratio: 4 / 5; object-fit: cover; } }
+
+/* ---------- v12: Aboriginal flag in the footer ---------- */
+.ack-title { display: flex; align-items: center; gap: 12px; }
+.ack-flag { width: 36px; height: 24px; flex: none; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,.08); }

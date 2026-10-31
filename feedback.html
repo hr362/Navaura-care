@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css?v=20261024c">
+<link rel="stylesheet" href="assets/styles.css?v=20261031">
 
 </head>
 <body>
@@ -35,7 +35,7 @@
   <div class="wrap">
     <a class="brand" href="index.html"><img src="assets/logo-full.png" alt="NavAura Care home" width="340" height="236"></a>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
-    <nav class="nav" id="nav" aria-label="Main"><a href="services.html">Services</a><a href="about.html">About Us</a><a href="team.html">Our Team</a><a href="ndis-info.html">NDIS Info</a><a href="coordinators.html">For Coordinators</a><a href="work-with-us.html">Careers</a><a href="contact.html">Contact Us</a></nav>
+    <nav class="nav" id="nav" aria-label="Main"><a href="services.html">Services</a><a href="about.html">About Us</a><a href="team.html">Our Team</a><a href="ndis-info.html">NDIS Info</a><a href="coordinators.html">For Coordinators</a><a href="work-with-us.html">Careers</a><a href="feedback.html" aria-current="page">Feedback</a><a href="contact.html">Contact Us</a></nav>
     <div class="header-actions"><a class="btn btn-purple" href="referral.html">Make A Referral</a></div>
   </div>
 </header>
@@ -45,6 +45,40 @@
 <section class="section"><div class="wrap">
   <h2 style="font-size:1.5rem">Tell us directly</h2>
   <p>Call <a href="tel:+61431404000">0431 404 000</a> or email <a href="mailto:services@navauracare.com.au?subject=Feedback">services@navauracare.com.au</a>. A family member, friend or advocate can contact us for you. We will keep you updated until your complaint is resolved.</p>
+  <h2 style="font-size:1.5rem;margin-top:32px">Send us your feedback</h2>
+  <p>Share a compliment, a suggestion or a complaint. You can leave your name and contact details blank if you'd prefer to stay anonymous.</p>
+  <form class="form" name="feedback" method="POST" action="https://formsubmit.co/services@navauracare.com.au" style="max-width:720px;margin:20px 0 40px">
+    <input type="hidden" name="_next" value="https://www.navauracare.com.au/thank-you.html">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="form" value="feedback">
+    <input type="hidden" name="_subject" value="Feedback or complaint from the NavAura Care website">
+    <p class="hp"><label>Leave this empty: <input name="_honey" tabindex="-1" autocomplete="off"></label></p>
+    <fieldset>
+      <legend>What would you like to share?</legend>
+      <div class="checks">
+        <label><input type="radio" name="feedback_type" value="Compliment"> Compliment</label>
+        <label><input type="radio" name="feedback_type" value="Feedback or suggestion" checked> Feedback or suggestion</label>
+        <label><input type="radio" name="feedback_type" value="Complaint"> Complaint</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Your details (optional)</legend>
+      <div class="field"><label for="fb_name">Name</label><input type="text" id="fb_name" name="name" autocomplete="name"></div>
+      <div class="row">
+        <div class="field"><label for="fb_phone">Phone</label><input type="tel" id="fb_phone" name="phone" autocomplete="tel"></div>
+        <div class="field"><label for="fb_email">Email</label><input type="email" id="fb_email" name="email" autocomplete="email"></div>
+      </div>
+      <div class="checks"><label><input type="checkbox" name="on_behalf" value="Yes"> I'm giving feedback on behalf of someone else</label></div>
+    </fieldset>
+    <fieldset>
+      <legend>Your feedback</legend>
+      <div class="field"><label for="fb_msg">What happened, or what would you like to tell us? <span class="req">*</span></label><textarea id="fb_msg" name="message" required></textarea></div>
+      <div class="field"><label for="fb_outcome">What would you like to happen? (optional)</label><textarea id="fb_outcome" name="desired_outcome"></textarea></div>
+    </fieldset>
+    <p><button class="btn btn-purple" type="submit">Send feedback</button></p>
+    <p class="hint" style="font-size:.95rem">Please don't include medical reports or plans here. Your feedback is handled under our <a href="privacy.html">Privacy Policy</a>.</p>
+  </form>
   <h2 style="font-size:1.5rem">Contact the NDIS Commission</h2>
   <p>You can also complain to the NDIS Quality and Safeguards Commission on 1800 035 544 or at ndiscommission.gov.au.</p>
 </div></section>
@@ -54,7 +88,7 @@
   <div class="wrap">
     <div class="statements">
       <div>
-        <h3>⚫🟡🔴 Acknowledgement of Country 🔴🟡⚫</h3>
+        <h3 class="ack-title"><svg class="ack-flag" viewBox="0 0 60 40" role="img" aria-label="Australian Aboriginal flag"><rect width="60" height="20" fill="#000"/><rect y="20" width="60" height="20" fill="#CC0000"/><circle cx="30" cy="20" r="10" fill="#FFFF00"/></svg><span>Acknowledgement of Country</span></h3>
         <p>NavAura Care acknowledges the Traditional Owners and Custodians of Country throughout Australia. We recognise their continuing connection to land, waters, culture and community. We pay our respect to Aboriginal and Torres Strait Islander Peoples, and to Elders past, present and emerging.</p>
       </div>
       <div>
@@ -81,7 +115,7 @@
       </div>
       <div>
         <h3>Services</h3>
-        <ul><li><a href="personal-care.html">Personal care and daily living</a></li><li><a href="sda.html">SDA and accommodation</a></li><li><a href="community.html">Community participation</a></li><li><a href="children.html">Early childhood supports</a></li><li><a href="transport.html">Accessible transport</a></li><li><a href="support-coordination.html">Support coordination</a></li><li><a href="services.html#allied-health">Allied health referrals</a></li></ul>
+        <ul><li><a href="personal-care.html">Personal care and daily living</a></li><li><a href="sda.html">Accommodation/tenancy support</a></li><li><a href="community.html">Community participation</a></li><li><a href="children.html">Early childhood supports</a></li><li><a href="transport.html">Accessible transport</a></li><li><a href="support-coordination.html">Support coordination</a></li><li><a href="services.html#allied-health">Allied health referrals</a></li></ul>
       </div>
       <div>
         <h3>Quick links</h3>
@@ -108,6 +142,6 @@
   b.addEventListener('click', () => { const o = n.classList.toggle('open'); b.setAttribute('aria-expanded', o); b.textContent = o ? 'Close' : 'Menu'; });
 </script>
 
-<script src="/assets/whatsapp.js?v=20261024c" defer></script>
+<script src="/assets/whatsapp.js?v=20261031" defer></script>
 </body>
 </html>
